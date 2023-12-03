@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 
 const DocumentsPage = () => {
   //   const router = useRouter();
-  //   const { user } = useUser();
+  const { user } = useUser();
   //   const create = useMutation(api.documents.create);
 
   //   const onCreate = () => {
@@ -42,7 +42,9 @@ const DocumentsPage = () => {
         alt="Empty"
         className="hidden dark:block"
       />
-      <h2 className="text-lg font-medium">Welcome to Lotion</h2>
+      <h2 className="text-lg font-medium">
+        Welcome to {user?.firstName}&apos;s Lotion
+      </h2>
       <Button>
         <PlusCircle className="h-4 w-4 mr-2" />
         Create a note
