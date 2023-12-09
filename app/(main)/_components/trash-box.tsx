@@ -29,10 +29,7 @@ export const TrashBox = () => {
     router.push(`/documents/${documentId}`);
   };
 
-  const onRestore = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    documentId: Id<"documents">
-  ) => {
+  const onRestore = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, documentId: Id<"documents">) => {
     event.stopPropagation();
     const promise = restore({ id: documentId });
 
@@ -77,9 +74,7 @@ export const TrashBox = () => {
         />
       </div>
       <div className="mt-2 px-1 pb-1">
-        <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">
-          No documents found.
-        </p>
+        <p className="hidden last:block text-xs text-center text-muted-foreground pb-2">No documents found.</p>
         {filteredDocuments?.map((document) => (
           <div
             key={document._id}
@@ -97,10 +92,7 @@ export const TrashBox = () => {
                 <Undo className="h-4 w-4 text-muted-foreground" />
               </div>
               <ConfirmModal onConfirm={() => onRemove(document._id)}>
-                <div
-                  role="button"
-                  className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600"
-                >
+                <div role="button" className="rounded-sm p-2 hover:bg-neutral-200 dark:hover:bg-neutral-600">
                   <Trash className="h-4 w-4 text-muted-foreground" />
                 </div>
               </ConfirmModal>

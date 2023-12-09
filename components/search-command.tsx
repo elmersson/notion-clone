@@ -65,11 +65,7 @@ export const SearchCommand = () => {
               title={document.title}
               onSelect={() => onSelect(document._id)}
             >
-              {document.icon ? (
-                <p className="mr-2 text-[18px]">{document.icon}</p>
-              ) : (
-                <File className="mr-2 h-4 w-4" />
-              )}
+              {document.icon ? <p className="mr-2 text-[18px]">{document.icon}</p> : <File className="mr-2 h-4 w-4" />}
               <span>{document.title}</span>
             </CommandItem>
           ))}
