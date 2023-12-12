@@ -1,14 +1,13 @@
 "use client";
 
-import { ChevronsLeftRight } from "lucide-react";
 import { useUser, SignOutButton } from "@clerk/clerk-react";
+import { ChevronsLeftRight } from "lucide-react";
 
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -19,14 +18,14 @@ export const UserItem = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <div role="button" className="flex items-center text-sm p-3 w-full hover:bg-primary/5">
-          <div className="gap-x-2 flex items-center max-w-[150px]">
+        <div role="button" className="flex w-full items-center p-3 text-sm hover:bg-primary/5">
+          <div className="flex max-w-[150px] items-center gap-x-2">
             <Avatar className="h-5 w-5">
               <AvatarImage src={user?.imageUrl} />
             </Avatar>
-            <span className="text-start font-medium line-clamp-1">{user?.fullName}&apos;s Lotion</span>
+            <span className="line-clamp-1 text-start font-medium">{user?.fullName}&apos;s Lotion</span>
           </div>
-          <ChevronsLeftRight className="rotate-90 ml-2 text-muted-foreground h-4 w-4" />
+          <ChevronsLeftRight className="ml-2 h-4 w-4 rotate-90 text-muted-foreground" />
         </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-80" align="start" alignOffset={11} forceMount>
@@ -41,7 +40,7 @@ export const UserItem = () => {
               </Avatar>
             </div>
             <div className="space-y-1">
-              <p className="text-sm line-clamp-1">{user?.fullName}&apos;s Lotion</p>
+              <p className="line-clamp-1 text-sm">{user?.fullName}&apos;s Lotion</p>
             </div>
           </div>
         </div>
