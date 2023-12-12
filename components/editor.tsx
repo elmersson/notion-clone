@@ -28,7 +28,9 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
 
   const editor: BlockNoteEditor = useBlockNote({
     editable,
-    initialContent: initialContent ? (JSON.parse(initialContent) as PartialBlock[]) : undefined,
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    initialContent: initialContent ? (JSON.parse(initialContent) as PartialBlock<>[]) : undefined,
     onEditorContentChange: (editor) => {
       onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
     },
