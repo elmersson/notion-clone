@@ -1,17 +1,16 @@
 "use client";
 
+import { SignInButton, UserButton } from "@clerk/clerk-react";
+import { useConvexAuth } from "convex/react";
 import Link from "next/link";
 
-import { SignInButton, UserButton } from "@clerk/clerk-react";
-
+import { ModeToggle } from "@/components/mode-toggle";
+import { Spinner } from "@/components/spinner";
 import { Button } from "@/components/ui/button";
+import { useScrollTop } from "@/hooks/use-scroll-top";
 import { cn } from "@/lib/utils";
 
 import { Logo } from "./logo";
-import { useScrollTop } from "@/hooks/use-scroll-top";
-import { ModeToggle } from "@/components/mode-toggle";
-import { useConvexAuth } from "convex/react";
-import { Spinner } from "@/components/spinner";
 
 export const Navbar = () => {
   const { isAuthenticated, isLoading } = useConvexAuth();
@@ -25,7 +24,7 @@ export const Navbar = () => {
       )}
     >
       <Logo />
-      <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
+      <div className="flex w-full items-center justify-between gap-x-2 md:ml-auto md:justify-end">
         {isLoading && <Spinner />}
         {!isAuthenticated && !isLoading && (
           <>
