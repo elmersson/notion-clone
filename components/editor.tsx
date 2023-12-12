@@ -1,7 +1,6 @@
 "use client";
 
-// eslint-disable-next-line import/named
-import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
+import { BlockNoteEditor, type PartialBlock } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { useTheme } from "next-themes";
 import "@blocknote/core/style.css";
@@ -28,9 +27,7 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
 
   const editor: BlockNoteEditor = useBlockNote({
     editable,
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    initialContent: initialContent ? (JSON.parse(initialContent) as PartialBlock<>[]) : undefined,
+    initialContent: initialContent ? (JSON.parse(initialContent) as PartialBlock[]) : undefined,
     onEditorContentChange: (editor) => {
       onChange(JSON.stringify(editor.topLevelBlocks, null, 2));
     },
