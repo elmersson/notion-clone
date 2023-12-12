@@ -1,7 +1,6 @@
 "use client";
 
-// eslint-disable-next-line import/named
-import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
+import { BlockNoteEditor, type PartialBlock } from "@blocknote/core";
 import { BlockNoteView, useBlockNote } from "@blocknote/react";
 import { useTheme } from "next-themes";
 import "@blocknote/core/style.css";
