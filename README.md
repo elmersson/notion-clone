@@ -4,18 +4,7 @@
 
 A notion designed app for a personal website: [MacOS](https://github.com/elmersson/MacOS).
 
-## Todo
-
-### 📱💻🖥️ Frontend:
-
-- [x] Inti
-- [x] Layout
-- [x] Landing page
-
-### 💻🔧🚀 Backend:
-
-- [x] Authentication
-- [x] Images
+[Preview of Lotion](https://lotion.rasmuselmersson.se/)
 
 ## Tech-stack
 
